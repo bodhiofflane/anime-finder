@@ -1,0 +1,70 @@
+@import '../../styles/mixins';
+@import '../../styles/breackpoints';
+
+.nav {
+  display: flex;
+  flex-direction: column;
+
+  margin: 2rem 0;
+  padding: 0;
+
+  list-style-type: none;
+
+  white-space: nowrap;
+
+  @include media($md) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+  }
+
+  &__item {
+    margin: 0.5rem 0;
+
+    @include media($md) {
+      margin: 0 1rem 0 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__link {
+    margin: 0;
+    padding: 0;
+
+    color: var(--info-text-color);
+    font-weight: 700;
+
+    background-color: inherit;
+    border: none;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: all 0.5s;
+
+    &:hover {
+      text-shadow: 0 0 15px var(--main-color);
+    }
+
+    &:active{
+      color: inherit;
+    }
+
+    &:focus {
+      @include inFocus();
+    }
+
+    @include media($md) {
+      font-weight: 400;
+    }
+    @include media($lg) {
+      font-size: 1.8rem;
+    }
+  }
+}

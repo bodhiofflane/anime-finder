@@ -1,0 +1,82 @@
+@import '../../styles/mixins';
+
+.burger-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+  &__button {
+    margin: 0;
+    padding: 0;
+
+    font-size: 2.6rem;
+
+    color: var(--info-text-color);
+
+    border: 0;
+    
+    background-color: inherit;
+    
+    cursor: pointer;
+    
+    &:focus {
+      @include inFocus;
+    }
+  }
+
+  &__icon {
+    display: block;
+  }
+
+  &__content {
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    padding: 1.5rem 2.5rem;
+
+    background-color: var(--section-color);
+
+    overflow: auto;
+
+    z-index: 999;
+
+    &--open {
+      opacity: 0.95;
+      width: 70vw;
+      height: 100vh;
+    }
+
+    transition: opacity var(--transition), width var(--transition), height var(--transition);
+  }
+
+  &__colse {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 2.6rem;
+
+    color: var(--info-text-color);
+
+    border: 0;
+    
+    background-color: inherit;
+    
+    cursor: pointer;
+    
+    &:focus {
+      @include inFocus();
+    }
+  }
+}

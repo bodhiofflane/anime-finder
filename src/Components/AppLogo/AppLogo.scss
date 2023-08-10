@@ -1,0 +1,70 @@
+@import '../../styles/mixins';
+@import '../../styles/breackpoints';
+
+.app-logo {
+  display: flex;
+  justify-content: center;
+
+  white-space: nowrap;
+
+  &__link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    color: inherit;
+    text-decoration: none;
+
+    &:focus {
+      @include inFocus();
+    }
+  }
+
+  &__title {
+    margin: 0 0.5rem 0 0;
+
+    font-size: 2rem;
+
+    @include media($md) {
+      font-size: 1.6rem;
+    }
+    @include media($lg) {
+      font-size: 2.3rem;
+    }
+  }
+
+  &__icon {
+    display: block;
+
+    height: 3rem;
+    width: 3rem;
+
+    stroke: var(--main-color);
+    
+    filter: drop-shadow(0 0 1px var(--main-color));
+
+    animation-name: rotate360Deg;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0, 0, 0, 0);
+
+  }
+
+}
+
+@keyframes rotate360Deg {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    stroke: var(--main-color-hover);
+    filter: drop-shadow(0 0 2px var(--main-color-hover)) blur(1px);
+    
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+
+}

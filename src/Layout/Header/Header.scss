@@ -1,0 +1,16 @@
+@import '../../styles/mixins';
+@import '../../styles/breackpoints';
+
+.header {
+  display: grid;
+
+  grid-template-columns: 1fr 3fr 1fr;
+
+  min-height: 6rem;
+
+  background-color: var(--section-color);
+
+  @include media($md) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
